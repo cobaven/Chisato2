@@ -25,6 +25,15 @@ const chapters: Record<string, { number: string; title: string; body: string }> 
   },
 }
 
+export function generateStaticParams() {
+  return [
+    { chapter: "1" },
+    { chapter: "2" },
+    { chapter: "3" },
+    { chapter: "4" },
+  ]
+}
+
 export default async function ChapterPage({ params }: { params: Promise<{ chapter: string }> }) {
   const { chapter } = await params
   const data = chapters[chapter]
