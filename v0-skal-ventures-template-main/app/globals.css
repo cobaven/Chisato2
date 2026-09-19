@@ -16,11 +16,54 @@
   font-display: swap;
 }
 
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes stagger {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes drift {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-6px) scale(1.02); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px 2px rgba(232, 196, 107, 0.2); }
+  50% { box-shadow: 0 0 20px 6px rgba(232, 196, 107, 0.4); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.glow-pulse-btn {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.drift-slow {
+  animation: drift 5s ease-in-out infinite;
+}
+
 :root {
-  /* Light Novel Archive palette — illuminated sand, deep shadows, restrained geometry */
   --background: #0a0806;
   --foreground: #f3ead7;
-  --primary: #e8c46b;        /* illuminated sand / amber gold */
+  --primary: #e8c46b;
   --primary-foreground: #1a1410;
   --primary-glow: #f0d88a;
   --border: #3a332a;
@@ -84,7 +127,6 @@ body {
   height: 100%;
 }
 
-/* Subtle sand-film grain overlay */
 body::before {
   content: "";
   position: fixed;

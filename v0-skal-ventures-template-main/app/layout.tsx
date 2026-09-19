@@ -18,6 +18,11 @@ export const metadata: Metadata = {
   description:
     "A cinematic archive for Heaven's Order, where narrative, interface, and atmosphere share the same visual language. Explore the manuscript, persona, and transmission.",
   generator: "v0.app",
+  icons: [
+    { rel: "icon", type: "image/x-icon", url: "/favicon.ico" },
+    { rel: "apple-touch-icon", sizes: "180x180", url: "/apple-touch-icon.png" },
+    { rel: "icon", type: "image/svg+xml", url: "/favicon.svg" },
+  ],
 }
 
 export default function RootLayout({

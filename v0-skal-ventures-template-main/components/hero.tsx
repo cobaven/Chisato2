@@ -13,34 +13,40 @@ export function Hero() {
       <GL hovering={hovering} />
 
       <div className="pb-16 mt-auto text-center relative z-10 px-4">
-        <Pill className="mb-6">HEAVEN'S ORDER</Pill>
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-sentient text-foreground">
+        <div className="reveal inline-block" style={{ animationDelay: "0ms" }}>
+          <Pill className="mb-6">HEAVEN'S ORDER</Pill>
+        </div>
+        <h1 className="text-5xl sm:text-6xl md:text-7xl font-sentient text-foreground reveal" style={{ animationDelay: "120ms" }}>
           BEYOND <i className="font-light text-primary">REALITY</i>
         </h1>
-        <p className="font-sans text-sm sm:text-base text-balance mt-8 max-w-[640px] mx-auto text-[rgba(243,234,215,0.72)]">
+        <p className="font-sans text-sm sm:text-base text-balance mt-8 max-w-[640px] mx-auto text-[rgba(243,234,215,0.72)] reveal" style={{ animationDelay: "240ms" }}>
           A cinematic archive for Heaven's Order, where narrative, interface, and atmosphere share the same visual language.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-          <Link href="#manuscript">
-            <Button
-              className="w-full sm:w-auto"
-              onMouseEnter={() => setHovering(true)}
-              onMouseLeave={() => setHovering(false)}
-            >
-              ENTER MANUSCRIPT →
-            </Button>
-          </Link>
-          <Link href="#portfolio">
-            <Button
-              variant="default"
-              className="w-full sm:w-auto bg-transparent border-primary text-primary hover:bg-primary/10"
-              onMouseEnter={() => setHovering(true)}
-              onMouseLeave={() => setHovering(false)}
-            >
-              EXPLORE ARCHIVE
-            </Button>
-          </Link>
+          <div className="reveal" style={{ animationDelay: "360ms" }}>
+            <Link href="#manuscript">
+              <Button
+                className="w-full sm:w-auto"
+                onMouseEnter={() => setHovering(true)}
+                onMouseLeave={() => setHovering(false)}
+              >
+                ENTER MANUSCRIPT →
+              </Button>
+            </Link>
+          </div>
+          <div className="reveal" style={{ animationDelay: "480ms" }}>
+            <Link href="#portfolio">
+              <Button
+                variant="default"
+                className="w-full sm:w-auto bg-transparent border-primary text-primary hover:bg-primary/10"
+                onMouseEnter={() => setHovering(true)}
+                onMouseLeave={() => setHovering(false)}
+              >
+                EXPLORE ARCHIVE
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
 
