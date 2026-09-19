@@ -10,14 +10,19 @@ interface MobileMenuProps {
   className?: string
 }
 
+const menuItems = [
+  { name: "ABOUT", href: "#about" },
+  { name: "MANUSCRIPT", href: "#manuscript" },
+  { name: "SOMETHING", href: "#something" },
+  { name: "CONTACT", href: "#contact" },
+  { name: "PORTFOLIO", href: "#portfolio" },
+  { name: "COLOR", href: "#color" },
+  { name: "MOTION", href: "#motion" },
+  { name: "STORY", href: "#story" },
+]
+
 export const MobileMenu = ({ className }: MobileMenuProps) => {
   const [isOpen, setIsOpen] = useState(false)
-
-  const menuItems = [
-    { name: "Soluções", href: "#solutions" },
-    { name: "Sobre", href: "#about" },
-    { name: "ENTRE EM CONTATO", href: "https://wa.me/5538998056501", isExternal: true },
-  ]
 
   const handleLinkClick = () => {
     setIsOpen(false)
@@ -36,7 +41,7 @@ export const MobileMenu = ({ className }: MobileMenuProps) => {
       </Dialog.Trigger>
 
       <Dialog.Portal>
-        <div data-overlay="true" className="fixed z-30 inset-0 bg-black/50 backdrop-blur-sm" />
+        <div data-overlay="true" className="fixed z-30 inset-0 bg-black/60 backdrop-blur-sm" />
 
         <Dialog.Content
           onInteractOutside={(e) => {
@@ -54,7 +59,7 @@ export const MobileMenu = ({ className }: MobileMenuProps) => {
                 key={item.name}
                 href={item.href}
                 onClick={handleLinkClick}
-                className="text-xl font-mono uppercase text-foreground/60 transition-colors ease-out duration-150 hover:text-primary py-2"
+                className="text-xl font-mono uppercase text-foreground/60 transition-colors ease-out duration-150 hover:text-primary py-2 tracking-[0.2em]"
                 target={item.isExternal ? "_blank" : undefined}
                 rel={item.isExternal ? "noopener noreferrer" : undefined}
               >

@@ -1,23 +1,29 @@
 "use client"
 
 import { Hero } from "@/components/hero"
-import { About } from "@/components/about"
-import { Solutions } from "@/components/solutions"
-import { Projects } from "@/components/projects"
-import { ContactSection } from "@/components/contact-section"
+import { Persona } from "@/components/persona"
+import { Manuscript } from "@/components/manuscript"
+import { Something } from "@/components/something"
+import { Transmission } from "@/components/transmission"
+import { Portfolio } from "@/components/portfolio"
+import { Color } from "@/components/color"
+import { Motion } from "@/components/motion"
+import { Story } from "@/components/story"
 import { Footer } from "@/components/footer"
-import { Leva } from "leva"
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <About />
-      <Solutions />
-      <Projects />
-      <ContactSection />
+      <Persona />
+      <Manuscript />
+      <Something />
+      <Transmission />
+      <Portfolio />
+      <Color />
+      <Motion />
+      <Story />
       <Footer />
-      <Leva hidden />
     </>
   )
 }

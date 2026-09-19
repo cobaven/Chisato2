@@ -17,11 +17,20 @@
 }
 
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
-  --primary: #FFC700;
-  --primary-foreground: #ffffff;
-  --border: #424242;
+  /* Light Novel Archive palette — illuminated sand, deep shadows, restrained geometry */
+  --background: #0a0806;
+  --foreground: #f3ead7;
+  --primary: #e8c46b;        /* illuminated sand / amber gold */
+  --primary-foreground: #1a1410;
+  --primary-glow: #f0d88a;
+  --border: #3a332a;
+  --border-soft: #26211c;
+  --muted: #a89880;
+  --muted-foreground: #8a7d6e;
+  --card: #14100c;
+  --card-foreground: #f3ead7;
+  --sidebar-primary: #100c09;
+  --shadow-glow: 0 0 12px 3px var(--tw-shadow-color);
 }
 
 @utility container {
@@ -43,11 +52,16 @@
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
 
   --font-mono: var(--font-geist-mono);
   --font-sentient: 'Sentient', sans-serif;
 
-  --shadow-glow: 0 0 8px 2px var(--tw-shadow-color);
+  --shadow-glow: 0 0 12px 3px var(--tw-shadow-color);
 }
 
 body {
@@ -62,9 +76,21 @@ body {
   position: fixed;
   height: 100svh;
   width: 100%;
+  z-index: 0;
 }
 
 #webgl canvas {
   width: 100%;
   height: 100%;
+}
+
+/* Subtle sand-film grain overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
 }

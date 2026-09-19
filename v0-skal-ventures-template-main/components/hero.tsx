@@ -9,34 +9,44 @@ import { useState } from "react"
 export function Hero() {
   const [hovering, setHovering] = useState(false)
   return (
-    <div className="flex flex-col h-svh justify-between pt-24">
+    <div className="flex flex-col h-svh justify-between pt-24 relative">
       <GL hovering={hovering} />
 
-      <div className="pb-16 mt-auto text-center relative z-10">
-        <Pill className="mb-6">AUTOMAÇÃO INTELIGENTE</Pill>
+      <div className="pb-16 mt-auto text-center relative z-10 px-4">
+        <Pill className="mb-6">HEAVEN'S ORDER</Pill>
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-sentient text-foreground">
-          Transformamos ideias <br />
-          <i className="font-light text-primary">em sistemas que trabalham por você</i>
+          BEYOND <i className="font-light text-primary">REALITY</i>
         </h1>
-        <p className="font-sans text-sm sm:text-base text-balance mt-8 max-w-[600px] mx-auto text-[rgba(235,229,229,1)]">
-          Soluções digitais, automações e sistemas feitos sob medida para criadores e empresas que querem ir além.
+        <p className="font-sans text-sm sm:text-base text-balance mt-8 max-w-[640px] mx-auto text-[rgba(243,234,215,0.72)]">
+          A cinematic archive for Heaven's Order, where narrative, interface, and atmosphere share the same visual language.
         </p>
 
-        <Link className="contents max-sm:hidden" href="/#contact">
-          <Button className="mt-14" onMouseEnter={() => setHovering(true)} onMouseLeave={() => setHovering(false)}>
-            [Falar com a Automa]
-          </Button>
-        </Link>
-        <Link className="contents sm:hidden" href="/#contact">
-          <Button
-            size="sm"
-            className="mt-14"
-            onMouseEnter={() => setHovering(true)}
-            onMouseLeave={() => setHovering(false)}
-          >
-            [Falar com a Automa]
-          </Button>
-        </Link>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+          <Link href="#manuscript">
+            <Button
+              className="w-full sm:w-auto"
+              onMouseEnter={() => setHovering(true)}
+              onMouseLeave={() => setHovering(false)}
+            >
+              ENTER MANUSCRIPT →
+            </Button>
+          </Link>
+          <Link href="#portfolio">
+            <Button
+              variant="default"
+              className="w-full sm:w-auto bg-transparent border-primary text-primary hover:bg-primary/10"
+              onMouseEnter={() => setHovering(true)}
+              onMouseLeave={() => setHovering(false)}
+            >
+              EXPLORE ARCHIVE
+            </Button>
+          </Link>
+        </div>
+      </div>
+
+      <div className="relative z-10 pb-8 flex flex-col items-center gap-2 text-[11px] font-mono uppercase tracking-[0.3em] text-foreground/40">
+        <span>SCROLL TO ENTER</span>
+        <span className="inline-block animate-bounce">↓</span>
       </div>
     </div>
   )
